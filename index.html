@@ -5,203 +5,38 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Mahmudur Rahman Miraz – Full Stack Java Developer</title>
 <meta name="description" content="Portfolio of Mahmudur Rahman Miraz, a Full Stack Java Developer and adjunct lecturer in Dhaka, Bangladesh. Enterprise systems built with Java, Spring and Angular.">
+<meta property="og:title" content="Mahmudur Rahman Miraz – Full Stack Java Developer">
+<meta property="og:description" content="Portfolio of Mahmudur Rahman Miraz, a Full Stack Java Developer and adjunct lecturer in Dhaka, Bangladesh. Enterprise systems built with Java, Spring and Angular.">
+<meta property="og:image" content="https://mrmiraz.github.io/assets/miraz.jpg">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://mrmiraz.github.io/">
+<link rel="icon" type="image/jpeg" href="assets/miraz.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Source+Serif+4:opsz,wght@8..60,400..700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&family=JetBrains+Mono:wght@500;700&family=Plus+Jakarta+Sans:wght@500..800&display=swap" rel="stylesheet">
 <script>
   try {
     var saved = localStorage.getItem('theme');
     if (saved === 'light' || saved === 'dark') document.documentElement.dataset.theme = saved;
   } catch (e) {}
 </script>
-<style>
-  :root {
-    --bg: #F3F7F7;
-    --surface: #FFFFFF;
-    --ink: #0B2A2F;
-    --muted: #46605F;
-    --line: #D1DEDD;
-    --accent: #1F7A3A;
-    --accent-ink: #FFFFFF;
-    --accent-soft: #E2F2E6;
-    --display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
-    --body: "Source Serif 4", Georgia, "Times New Roman", serif;
-    --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-    color-scheme: light;
-    box-sizing: border-box;
-    padding-top: env(safe-area-inset-top, 0px);
-    padding-bottom: env(safe-area-inset-bottom, 0px);
-  }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --bg: #0A1C20;
-      --surface: #10282D;
-      --ink: #E3EFEE;
-      --muted: #9BB5B5;
-      --line: #214047;
-      --accent: #86D96B;
-      --accent-ink: #0A1C20;
-      --accent-soft: #163A33;
-      color-scheme: dark;
-    }
-  }
-  :root[data-theme="dark"] {
-    --bg: #0A1C20;
-    --surface: #10282D;
-    --ink: #E3EFEE;
-    --muted: #9BB5B5;
-    --line: #214047;
-    --accent: #86D96B;
-    --accent-ink: #0A1C20;
-    --accent-soft: #163A33;
-    color-scheme: dark;
-  }
-  html { scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 6rem); }
-  @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
-  *, *::before, *::after { box-sizing: inherit; }
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--ink);
-    font-family: var(--body);
-    font-size: 1.125rem;
-    line-height: 1.65;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-  }
-  a { color: inherit; text-decoration-color: var(--accent); text-decoration-thickness: 2px; text-underline-offset: .2em; }
-  a:hover { color: var(--accent); }
-  :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: .25rem; }
-  .wrap { width: min(100% - 2.5rem, 70rem); margin-inline: auto; }
-  .skip-link { position: absolute; left: 1rem; top: -4rem; background: var(--accent); color: var(--accent-ink); padding: .6rem 1rem; border-radius: .4rem; z-index: 20; font-family: var(--display); font-weight: 600; }
-  .skip-link:focus { top: 1rem; }
-
-  /* Header */
-  .site-header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); border-bottom: 1px solid var(--line); }
-  .bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .25rem 1.5rem; padding-block: .75rem; }
-  .brand { font-family: var(--display); font-weight: 800; font-size: 1.35rem; letter-spacing: -.03em; text-decoration: none; }
-  .brand:hover { color: var(--accent); }
-  .nav { order: 3; width: 100%; overflow-x: auto; scrollbar-width: none; }
-  .nav::-webkit-scrollbar { display: none; }
-  .nav ul { display: flex; gap: 1.5rem; list-style: none; margin: 0; padding: .25rem 0; white-space: nowrap; }
-  .nav a { font-family: var(--display); font-weight: 500; font-size: 1rem; text-decoration: none; color: var(--muted); }
-  .nav a:hover { color: var(--accent); }
-  @media (min-width: 52rem) {
-    .nav { order: 0; width: auto; flex: 1; display: flex; justify-content: center; }
-  }
-  .theme { display: grid; place-items: center; width: 2.5rem; height: 2.5rem; border: 1px solid var(--line); border-radius: 50%; background: var(--surface); color: var(--ink); cursor: pointer; }
-  .theme:hover { border-color: var(--accent); color: var(--accent); }
-  .theme svg { width: 1.2rem; height: 1.2rem; }
-  .theme .i-sun { display: none; }
-  .theme[data-mode="dark"] .i-sun { display: block; }
-  .theme[data-mode="dark"] .i-moon { display: none; }
-
-  /* Hero */
-  .hero { padding-block: clamp(3rem, 8vw, 6.5rem) clamp(3rem, 6vw, 5rem); }
-  .hero-grid { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 3rem 4rem; align-items: end; }
-  @media (max-width: 55rem) { .hero-grid { grid-template-columns: 1fr; } }
-  h1 { font-family: var(--display); font-weight: 700; font-size: clamp(2.9rem, 1.9rem + 5.6vw, 6rem); line-height: .96; letter-spacing: -.04em; margin: 0 0 1.75rem; text-wrap: balance; }
-  .lede { font-size: clamp(1.2rem, 1.05rem + .7vw, 1.5rem); line-height: 1.45; max-width: 31em; margin: 0 0 1rem; }
-  .stack-note { color: var(--muted); max-width: 34em; margin: 0 0 1rem; }
-  .proof { max-width: 34em; margin: 0 0 2rem; }
-  .proof strong { font-family: var(--display); font-weight: 700; }
-  .actions { display: flex; flex-wrap: wrap; gap: .75rem; }
-  .btn { display: inline-flex; align-items: center; padding: .75rem 1.4rem; border-radius: 999px; font-family: var(--display); font-weight: 600; font-size: 1.05rem; text-decoration: none; border: 2px solid var(--accent); }
-  .btn-primary { background: var(--accent); color: var(--accent-ink); }
-  .btn-primary:hover { color: var(--accent-ink); filter: brightness(1.08); }
-  .btn-quiet { color: var(--ink); border-color: var(--line); }
-  .btn-quiet:hover { border-color: var(--accent); }
-  .now { background: var(--surface); border: 1px solid var(--line); border-radius: .75rem; padding: 1.5rem; }
-  .now-title { font-family: var(--display); font-weight: 700; font-size: 1.15rem; margin: 0 0 1.1rem; }
-  .now dl { margin: 0; display: grid; gap: 1.1rem; }
-  .now dt { font-family: var(--display); font-weight: 600; }
-  .now dd { margin: 0; color: var(--muted); font-size: 1rem; line-height: 1.45; }
-  @media (prefers-reduced-motion: no-preference) {
-    .hero [data-rise] { opacity: 0; transform: translateY(14px); animation: rise .7s cubic-bezier(.2, .7, .2, 1) forwards; animation-delay: calc(var(--i, 0) * 90ms); }
-    @keyframes rise { to { opacity: 1; transform: none; } }
-  }
-
-  /* Sections */
-  .section { padding-block: clamp(3rem, 7vw, 5.5rem); border-top: 1px solid var(--line); }
-  .section-grid { display: grid; grid-template-columns: minmax(0, 14rem) minmax(0, 1fr); gap: 2rem 4rem; }
-  @media (max-width: 55rem) { .section-grid { grid-template-columns: 1fr; } }
-  .section h2 { font-family: var(--display); font-weight: 700; font-size: clamp(1.9rem, 1.4rem + 1.6vw, 2.6rem); letter-spacing: -.03em; line-height: 1.05; margin: 0 0 1rem; }
-  .side-note { color: var(--muted); font-size: 1rem; line-height: 1.55; margin: 0; max-width: 24em; }
-
-  /* Systems explorer */
-  .explorer { display: grid; grid-template-columns: minmax(0, 13.5rem) minmax(0, 1fr); gap: 2rem; align-items: start; }
-  @media (max-width: 42rem) { .explorer { grid-template-columns: 1fr; } }
-  .gateway { position: relative; display: inline-block; margin: 0; font-family: var(--mono); font-size: .85rem; font-weight: 600; padding: .4rem .8rem; border: 2px solid var(--ink); border-radius: .4rem; background: var(--surface); }
-  .gateway::after { content: ""; position: absolute; left: 1.1rem; top: 100%; height: 1rem; width: 2px; background: var(--line); }
-  .tablist { display: flex; flex-direction: column; gap: .25rem; margin: 1rem 0 0 1.1rem; padding: 0 0 0 1.25rem; border-left: 2px solid var(--line); }
-  .tab { position: relative; display: grid; gap: .1rem; text-align: left; background: none; border: 0; color: inherit; padding: .6rem .8rem; border-radius: .5rem; cursor: pointer; font: inherit; line-height: 1.3; }
-  .tab::before { content: ""; position: absolute; left: -1.25rem; top: 50%; width: 1.25rem; height: 2px; background: var(--line); }
-  .tab .path { font-family: var(--mono); font-weight: 700; font-size: .98rem; }
-  .tab .name { font-family: var(--display); font-size: .95rem; color: var(--muted); }
-  .tab:hover { background: var(--accent-soft); }
-  .tab[aria-selected="true"] { background: var(--accent); color: var(--accent-ink); }
-  .tab[aria-selected="true"] .name { color: inherit; }
-  .tab[aria-selected="true"]::before { background: var(--accent); }
-  .panel { background: var(--surface); border: 1px solid var(--line); border-radius: .75rem; padding: clamp(1.25rem, 3vw, 2rem); }
-  .panel[hidden] { display: none; }
-  .panel.swap { animation: swap .28s ease-out; }
-  @keyframes swap { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
-  .route-line { font-family: var(--mono); font-size: .9rem; color: var(--muted); margin: 0 0 .6rem; }
-  .panel h3 { font-family: var(--display); font-weight: 700; font-size: 1.5rem; letter-spacing: -.02em; line-height: 1.15; margin: 0; }
-  .result { font-family: var(--display); font-weight: 700; font-size: clamp(1.7rem, 1.2rem + 1.8vw, 2.5rem); letter-spacing: -.035em; line-height: 1.05; color: var(--accent); margin: 1.25rem 0; }
-  .panel p.detail { margin: 0; max-width: 34em; }
-  .tags { display: flex; flex-wrap: wrap; gap: .5rem; list-style: none; padding: 0; margin: 1.5rem 0 0; }
-  .tags li { font-family: var(--display); font-weight: 500; font-size: .88rem; padding: .2rem .65rem; border: 1px solid var(--line); border-radius: .3rem; background: var(--bg); }
-  .also { margin: 1.75rem 0 0; color: var(--muted); max-width: 36em; }
-
-  /* Timeline */
-  .timeline { list-style: none; margin: 0; padding: 0; }
-  .job { display: grid; grid-template-columns: 10rem minmax(0, 1fr); gap: 0 2rem; }
-  @media (max-width: 40rem) { .job { grid-template-columns: 1fr; gap: .25rem; } }
-  .when { margin: 0; padding-top: .3rem; font-family: var(--display); font-weight: 600; font-size: .98rem; color: var(--muted); }
-  .what { position: relative; border-left: 2px solid var(--line); padding: 0 0 2.4rem 1.75rem; }
-  .what::before { content: ""; position: absolute; left: -8px; top: .55rem; width: 14px; height: 14px; border-radius: 50%; background: var(--bg); border: 3px solid var(--accent); }
-  .job.current .what::before { background: var(--accent); }
-  .job:last-child .what { border-left-color: transparent; padding-bottom: 0; }
-  .what h3 { font-family: var(--display); font-weight: 600; font-size: 1.3rem; letter-spacing: -.015em; line-height: 1.25; margin: 0; }
-  .org { margin: .1rem 0 .6rem; color: var(--muted); font-size: 1rem; }
-  .what ul { margin: 0; padding-left: 1.15rem; max-width: 36em; }
-  .what li + li { margin-top: .4rem; }
-  .what p.copy { margin: 0; max-width: 36em; }
-
-  /* Definition rows (teaching, skills, education) */
-  .rows { margin: 0; display: grid; }
-  .rows > div { display: grid; grid-template-columns: minmax(0, 11rem) minmax(0, 1fr); gap: .25rem 2rem; padding-block: 1.1rem; border-top: 1px solid var(--line); }
-  .rows > div:last-child { border-bottom: 1px solid var(--line); }
-  @media (max-width: 40rem) { .rows > div { grid-template-columns: 1fr; } }
-  .rows dt { font-family: var(--display); font-weight: 600; }
-  .rows dd { margin: 0; max-width: 36em; }
-  .top-skills { font-family: var(--display); font-weight: 500; font-size: clamp(1.25rem, 1.05rem + 1vw, 1.7rem); line-height: 1.3; letter-spacing: -.015em; margin: 0 0 1.75rem; max-width: 28em; }
-  .top-skills strong { font-weight: 700; }
-
-  /* Contact */
-  .mail { display: inline-block; font-family: var(--display); font-weight: 700; font-size: clamp(1.5rem, .9rem + 3.4vw, 3rem); letter-spacing: -.035em; line-height: 1.1; overflow-wrap: anywhere; margin: 0 0 1.5rem; }
-  .contact-lede { margin: 0 0 1.5rem; max-width: 30em; }
-  .links { display: flex; flex-wrap: wrap; gap: .5rem 1.75rem; list-style: none; margin: 0; padding: 0; font-family: var(--display); font-weight: 600; }
-
-  .site-footer { border-top: 1px solid var(--line); padding-block: 2rem; color: var(--muted); font-size: 1rem; }
-  .site-footer p { margin: 0; }
-</style>
+<link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 
 <header class="site-header">
   <div class="wrap bar">
-    <a class="brand" href="#top">Miraz</a>
-    <nav class="nav" aria-label="Sections">
+    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">M</span>Miraz</a>
+    <nav class="nav" aria-label="Pages">
       <ul>
-        <li><a href="#systems">Systems</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#teaching">Teaching</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="systems.html">Systems</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="technology.html">Technology</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
     <button class="theme" id="theme" type="button" aria-label="Switch to dark theme" data-mode="light">
@@ -211,20 +46,28 @@
   </div>
 </header>
 
-<main id="main">
+<main id="main" class="home pg-index">
   <section class="hero" id="top">
     <div class="wrap hero-grid">
       <div>
-        <h1 data-rise style="--i:0">Mahmudur Rahman Miraz</h1>
-        <p class="lede" data-rise style="--i:1">Full Stack Java Developer who builds enterprise systems for HR, accounting, learning, and supply chains, and teaches computer science at Southeast University.</p>
-        <p class="stack-note" data-rise style="--i:2">My stack is Java, Spring, and Angular. I've used it to build core banking and fintech applications too.</p>
-        <p class="proof" data-rise style="--i:3">So far I've deployed <strong>10+ web applications</strong>, including <strong>5 ERP systems</strong> with <strong>30,000+ active users</strong>.</p>
-        <div class="actions" data-rise style="--i:4">
+        <p class="eyebrow" data-rise style="--i:0">Full Stack Java Developer · Dhaka, Bangladesh</p>
+        <h1 data-rise style="--i:1">Mahmudur Rahman <span class="grad">Miraz</span></h1>
+        <p class="lede" data-rise style="--i:2">Full Stack Java Developer who builds enterprise systems for HR, accounting, learning, and supply chains, and teaches computer science at Southeast University.</p>
+        <p class="stack-note" data-rise style="--i:3">My stack is Java, Spring, and Angular. I've used it to build core banking and fintech applications too.</p>
+        <ul class="stats" data-rise style="--i:4" aria-label="Highlights">
+          <li><strong>10+</strong><span>web applications deployed</span></li>
+          <li><strong>5</strong><span>ERP systems</span></li>
+          <li><strong>30,000+</strong><span>active users</span></li>
+        </ul>
+        <div class="actions" data-rise style="--i:5">
           <a class="btn btn-primary" href="mailto:mahmudur.miraz@gmail.com">Email me</a>
-          <a class="btn btn-quiet" href="#systems">See my systems</a>
+          <a class="btn btn-quiet" href="systems.html">See my systems</a>
         </div>
       </div>
-      <aside class="now" data-rise style="--i:5" aria-labelledby="now-title">
+      <div class="stage">
+        <div class="deco" aria-hidden="true"><div class="px" style="--d:-22"><div class="cube"><i></i><i></i><i></i><i></i><i></i><i></i></div></div><div class="px" style="--d:30"><div class="ring"></div></div><div class="px" style="--d:-12"><div class="orb"></div></div></div>
+        <aside class="now" data-rise style="--i:6" aria-labelledby="now-title">
+        <div class="avatar-wrap"><div class="avatar-clip"><img class="avatar" src="assets/miraz.jpg" width="640" height="640" alt="Portrait of Mahmudur Rahman Miraz in a graduation gown and cap, making a peace sign"></div></div>
         <h2 class="now-title" id="now-title">Currently</h2>
         <dl>
           <div>
@@ -236,223 +79,57 @@
             <dd>Southeast University, part-time since November 2023</dd>
           </div>
           <div>
+            <dt>Researcher</dt>
+            <dd>Dhaka, Bangladesh, since June 2022</dd>
+          </div>
+          <div>
             <dt>Based in</dt>
             <dd>Dhaka, Bangladesh</dd>
           </div>
         </dl>
       </aside>
-    </div>
-  </section>
-
-  <section class="section" id="systems" aria-labelledby="systems-h">
-    <div class="wrap section-grid">
-      <div>
-        <h2 id="systems-h">Systems I've built</h2>
-        <p class="side-note">Spring Cloud API Gateway is one of my top skills, so I've laid these out as routes behind a gateway. Pick one to see what I did.</p>
-      </div>
-      <div>
-        <div class="explorer">
-          <div class="rail">
-            <p class="gateway">API gateway</p>
-            <div class="tablist" role="tablist" aria-orientation="vertical" aria-label="Systems">
-              <button class="tab" role="tab" id="t-hrm" aria-controls="p-hrm" aria-selected="true"><span class="path">/hrm</span><span class="name">Human resources</span></button>
-              <button class="tab" role="tab" id="t-sms" aria-controls="p-sms" aria-selected="false" tabindex="-1"><span class="path">/sms</span><span class="name">Student management</span></button>
-              <button class="tab" role="tab" id="t-lms" aria-controls="p-lms" aria-selected="false" tabindex="-1"><span class="path">/lms</span><span class="name">Learning management</span></button>
-              <button class="tab" role="tab" id="t-accounts" aria-controls="p-accounts" aria-selected="false" tabindex="-1"><span class="path">/accounts</span><span class="name">Accounting</span></button>
-              <button class="tab" role="tab" id="t-scm" aria-controls="p-scm" aria-selected="false" tabindex="-1"><span class="path">/scm</span><span class="name">Supply chain</span></button>
-            </div>
-          </div>
-
-          <div class="panels">
-            <div class="panel" role="tabpanel" id="p-hrm" aria-labelledby="t-hrm" tabindex="0">
-              <p class="route-line">GET /hrm</p>
-              <h3>Human Resource Management System</h3>
-              <p class="result">Critical queries now respond 40% faster.</p>
-              <p class="detail">I tuned the slowest database queries with indexing and ORM techniques, and connected the modules through RESTful APIs so data moves smoothly between them.</p>
-              <ul class="tags"><li>Database indexing</li><li>ORM</li><li>RESTful APIs</li></ul>
-            </div>
-
-            <div class="panel" role="tabpanel" id="p-sms" aria-labelledby="t-sms" tabindex="0" hidden>
-              <p class="route-line">GET /sms</p>
-              <h3>Student Management System</h3>
-              <p class="result">Server load down 35%.</p>
-              <p class="detail">I implemented caching with Redis to improve application performance and take load off the server.</p>
-              <ul class="tags"><li>Redis</li><li>Caching</li></ul>
-            </div>
-
-            <div class="panel" role="tabpanel" id="p-lms" aria-labelledby="t-lms" tabindex="0" hidden>
-              <p class="route-line">GET /lms</p>
-              <h3>Learning Management System</h3>
-              <p class="result">User errors down 25%.</p>
-              <p class="detail">I secured the platform with JWT-based authentication and built responsive Angular Material designs that cut user error rates by a quarter.</p>
-              <ul class="tags"><li>JWT authentication</li><li>Angular Material</li><li>Responsive UI</li></ul>
-            </div>
-
-            <div class="panel" role="tabpanel" id="p-accounts" aria-labelledby="t-accounts" tabindex="0" hidden>
-              <p class="route-line">GET /accounts</p>
-              <h3>Accounts System</h3>
-              <p class="result">Response times down 40%.</p>
-              <p class="detail">I optimized database queries with ORM techniques to make the accounting module noticeably faster.</p>
-              <ul class="tags"><li>ORM</li><li>Query optimization</li></ul>
-            </div>
-
-            <div class="panel" role="tabpanel" id="p-scm" aria-labelledby="t-scm" tabindex="0" hidden>
-              <p class="route-line">GET /scm</p>
-              <h3>Supply Chain Management (SCM)</h3>
-              <p class="result">Real-time tracking for clients.</p>
-              <p class="detail">I delivered an efficient, responsive interface with Angular and Tailwind CSS, and implemented real-time tracking features that improved client satisfaction.</p>
-              <ul class="tags"><li>Angular</li><li>Tailwind CSS</li><li>Real-time tracking</li></ul>
-            </div>
-          </div>
-        </div>
-        <p class="also">I've also contributed to centralized logging and monitoring systems.</p>
       </div>
     </div>
   </section>
 
-  <section class="section" id="experience" aria-labelledby="experience-h">
+  <section class="section" id="about" aria-labelledby="about-h">
     <div class="wrap section-grid">
-      <div>
-        <h2 id="experience-h">Where I've worked</h2>
+      <div class="section-head reveal">
+        <span class="kicker">About</span>
+        <h2 id="about-h">Professional summary</h2>
       </div>
-      <ol class="timeline">
-        <li class="job current">
-          <p class="when">Jun 2025 – Present</p>
-          <div class="what">
-            <h3>Java Developer</h3>
-            <p class="org">Commlink Info Tech Ltd., Dhaka</p>
-            <p class="copy">Member of the team, working as a Java developer.</p>
-          </div>
-        </li>
-        <li class="job">
-          <p class="when">Jan 2024 – Jun 2025</p>
-          <div class="what">
-            <h3>Assistant Programmer</h3>
-            <p class="org">Southeast University, Dhaka</p>
-            <ul>
-              <li>Worked on the HR, student management, learning management, accounts, and supply chain systems.</li>
-              <li>Developed and deployed 10+ web applications, including 5 ERP systems serving 30,000+ active users.</li>
-            </ul>
-          </div>
-        </li>
-        <li class="job current">
-          <p class="when">Nov 2023 – Present</p>
-          <div class="what">
-            <h3>Lecturer (part-time)</h3>
-            <p class="org">Southeast University, Dhaka</p>
-            <p class="copy">Teaching undergraduate students Computer Fundamentals, C, Java, and Data Structures.</p>
-          </div>
-        </li>
-        <li class="job">
-          <p class="when">Nov 2022 – Dec 2023</p>
-          <div class="what">
-            <h3>Programming Assistant</h3>
-            <p class="org">Southeast University, Dhaka</p>
-            <ul>
-              <li>Built and maintained microservices-based enterprise applications with Spring Boot and Angular.</li>
-              <li>Implemented RESTful APIs between modules, reducing system latency by 40%.</li>
-              <li>Added Redis caching and optimized database queries for better performance.</li>
-              <li>Integrated JWT-based authentication.</li>
-            </ul>
-          </div>
-        </li>
-        <li class="job">
-          <p class="when">Jun 2022 – Nov 2024</p>
-          <div class="what">
-            <h3>Researcher</h3>
-            <p class="org">Dhaka, Bangladesh</p>
-          </div>
-        </li>
-      </ol>
-    </div>
-  </section>
-
-  <section class="section" id="teaching" aria-labelledby="teaching-h">
-    <div class="wrap section-grid">
-      <div>
-        <h2 id="teaching-h">Teaching</h2>
-        <p class="side-note">Part-time lecturer in Computer Science at Southeast University since November 2023.</p>
-      </div>
-      <dl class="rows">
-        <div>
-          <dt>Computer Fundamentals</dt>
-          <dd>The basics of computer systems, hardware, software, operating systems, and digital logic.</dd>
-        </div>
-        <div>
-          <dt>C Programming</dt>
-          <dd>Structured programming, problem-solving techniques, and practical coding in C.</dd>
-        </div>
-        <div>
-          <dt>Java Programming</dt>
-          <dd>Object-oriented programming principles, Java syntax, and application development.</dd>
-        </div>
-        <div>
-          <dt>Data Structures</dt>
-          <dd>Arrays, linked lists, stacks, queues, trees, and graphs, along with algorithmic efficiency.</dd>
-        </div>
-      </dl>
-    </div>
-  </section>
-
-  <section class="section" id="skills" aria-labelledby="skills-h">
-    <div class="wrap section-grid">
-      <div>
-        <h2 id="skills-h">Skills</h2>
-      </div>
-      <div>
-        <p class="top-skills">My top skills on LinkedIn are <strong>Java 21</strong>, <strong>Spring Cloud API Gateway</strong>, and <strong>PostgreSQL</strong>.</p>
-        <dl class="rows">
-          <div><dt>Languages</dt><dd>Java (8, 11, 17, 21), TypeScript, Python</dd></div>
-          <div><dt>Frameworks</dt><dd>Spring Boot, Spring Cloud, Hibernate, JPA, Angular 14+</dd></div>
-          <div><dt>Databases</dt><dd>PostgreSQL, MySQL, Oracle, MongoDB</dd></div>
-          <div><dt>Cloud and containers</dt><dd>AWS (EC2, S3), Redis, Kubernetes</dd></div>
-          <div><dt>Tools</dt><dd>Git, Maven, IntelliJ IDEA, Eclipse, Jira</dd></div>
-          <div><dt>Practices</dt><dd>RESTful APIs, microservices, JWT authentication, unit testing with JUnit, CI/CD pipelines, Agile, DevOps basics</dd></div>
-          <div><dt>Design</dt><dd>Object-oriented programming, data structures, Angular Material, Tailwind CSS, responsive UI design</dd></div>
-          <div><dt>Also</dt><dd>Machine learning basics with Python</dd></div>
-        </dl>
+      <div class="about reveal">
+        <p>Motivated Full Stack Java Developer who designs and deploys scalable enterprise-level applications. I build Core Banking Solutions (CBS) and FinTech applications with Core Java, Spring Boot, and Angular.</p>
+        <p>I deliver clean, efficient, and secure code, work in Agile teams, and care about both responsive user interfaces and robust backend architectures.</p>
       </div>
     </div>
   </section>
 
-  <section class="section" id="education" aria-labelledby="education-h">
+  <section class="section" id="explore" aria-labelledby="explore-h">
     <div class="wrap section-grid">
-      <div>
-        <h2 id="education-h">Education and recognition</h2>
+      <div class="section-head reveal">
+        <span class="kicker">Explore</span>
+        <h2 id="explore-h">Find your way around</h2>
+        <p class="side-note">Each area of my work has its own page.</p>
       </div>
-      <dl class="rows">
-        <div>
-          <dt>Degree</dt>
-          <dd>BSc in Computer Science &amp; Engineering, Southeast University (June 2019 – July 2023). Graduated with a CGPA of 3.99 out of 4.00.</dd>
-        </div>
-        <div>
-          <dt>Award</dt>
-          <dd>Vice Chancellor's Gold Medal</dd>
-        </div>
-        <div>
-          <dt>ICPC</dt>
-          <dd>Represented Southeast University in multiple programming contests.</dd>
-        </div>
-        <div>
-          <dt>Practice</dt>
-          <dd>Active on LeetCode, Codeforces, GeeksforGeeks, and HackerRank.</dd>
-        </div>
-      </dl>
+      <ul class="explore reveal">
+        <li><a href="systems.html"><span class="ico " aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><path d="M7 7h.01M7 17h.01"/></svg></span><h3>Systems</h3><p>The enterprise systems I’ve built and the results I delivered.</p><span class="go">Explore →</span></a></li>
+        <li><a href="experience.html"><span class="ico t-cyan" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18"/></svg></span><h3>Experience</h3><p>Where I’ve worked, from research to Java development.</p><span class="go">Explore →</span></a></li>
+        <li><a href="research.html"><span class="ico t-rose" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6L5 18a2 2 0 0 0 1.8 3h10.4A2 2 0 0 0 19 18l-5-9V3"/><path d="M7.5 15h9"/></svg></span><h3>Research</h3><p>My ongoing research, conference papers and research interests.</p><span class="go">Explore →</span></a></li>
+        <li><a href="technology.html"><span class="ico t-green" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></svg></span><h3>Technology</h3><p>The languages, frameworks and tools I’ve learned and use.</p><span class="go">Explore →</span></a></li>
+        <li><a href="education.html"><span class="ico t-gold" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 9 12 4 2 9l10 5 10-5z"/><path d="M6 11.2v4.6c0 1.2 2.7 2.7 6 2.7s6-1.5 6-2.7v-4.6"/><path d="M22 9v6"/></svg></span><h3>Education &amp; teaching</h3><p>My degree, awards, and the courses I teach.</p><span class="go">Explore →</span></a></li>
+        <li><a href="contact.html"><span class="ico " aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><h3>Contact</h3><p>Email, LinkedIn, GitHub and GitLab.</p><span class="go">Explore →</span></a></li>
+      </ul>
     </div>
   </section>
 
-  <section class="section" id="contact" aria-labelledby="contact-h">
-    <div class="wrap section-grid">
-      <div>
-        <h2 id="contact-h">Contact</h2>
-      </div>
-      <div>
-        <p class="contact-lede">Want to work together or talk about a project? Email is the quickest way to reach me.</p>
+  <section class="section" aria-label="Get in touch">
+    <div class="wrap">
+      <div class="contact-card reveal">
+        <p class="contact-lede">Want to work together or talk about a project?</p>
         <a class="mail" href="mailto:mahmudur.miraz@gmail.com">mahmudur.miraz@gmail.com</a>
         <ul class="links">
-          <li><a href="https://www.linkedin.com/in/mrmiraz" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-          <li><a href="https://github.com/mrmiraz" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-          <li><a href="https://gitlab.com/mrmiraz" target="_blank" rel="noopener noreferrer">GitLab</a></li>
+          <li><a href="contact.html">All contact options</a></li>
         </ul>
       </div>
     </div>
@@ -460,60 +137,22 @@
 </main>
 
 <footer class="site-footer">
-  <div class="wrap">
+  <div class="wrap footer-grid">
     <p>© 2026 Mahmudur Rahman Miraz. Dhaka, Bangladesh.</p>
+    <nav aria-label="Footer">
+      <ul class="footer-nav">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="systems.html">Systems</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="technology.html">Technology</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
   </div>
 </footer>
 
-<script>
-  (function () {
-    /* Systems explorer */
-    var tabs = Array.prototype.slice.call(document.querySelectorAll('[role="tab"]'));
-    var panels = tabs.map(function (t) { return document.getElementById(t.getAttribute('aria-controls')); });
-    function select(i, focus) {
-      tabs.forEach(function (t, j) {
-        var on = i === j;
-        t.setAttribute('aria-selected', on ? 'true' : 'false');
-        t.tabIndex = on ? 0 : -1;
-        panels[j].hidden = !on;
-      });
-      var p = panels[i];
-      p.classList.remove('swap');
-      void p.offsetWidth;
-      p.classList.add('swap');
-      if (focus) tabs[i].focus();
-    }
-    tabs.forEach(function (t, i) {
-      t.addEventListener('click', function () { select(i, false); });
-      t.addEventListener('keydown', function (e) {
-        var n = null, k = e.key;
-        if (k === 'ArrowDown' || k === 'ArrowRight') n = (i + 1) % tabs.length;
-        else if (k === 'ArrowUp' || k === 'ArrowLeft') n = (i - 1 + tabs.length) % tabs.length;
-        else if (k === 'Home') n = 0;
-        else if (k === 'End') n = tabs.length - 1;
-        if (n !== null) { e.preventDefault(); select(n, true); }
-      });
-    });
-
-    /* Theme toggle */
-    var root = document.documentElement;
-    var btn = document.getElementById('theme');
-    var mq = window.matchMedia('(prefers-color-scheme: dark)');
-    function current() { return root.dataset.theme || (mq.matches ? 'dark' : 'light'); }
-    function paint() {
-      var m = current();
-      btn.dataset.mode = m;
-      btn.setAttribute('aria-label', m === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
-    }
-    btn.addEventListener('click', function () {
-      var next = current() === 'dark' ? 'light' : 'dark';
-      root.dataset.theme = next;
-      try { localStorage.setItem('theme', next); } catch (e) {}
-      paint();
-    });
-    if (mq.addEventListener) mq.addEventListener('change', paint);
-    paint();
-  })();
-</script>
+<script src="assets/js/site.js"></script>
 </body>
 </html>
