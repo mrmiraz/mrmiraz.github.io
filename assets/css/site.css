@@ -554,3 +554,5 @@
   .sys-body .tags { margin-top: auto; padding-top: 1.25rem; }
   .sys-card :target, .sys-card:target { scroll-margin-top: 6rem; }
   .sys-card:target { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft), var(--shadow-lg); }
+
+  .tag.tag-sub { background: color-mix(in srgb, var(--warn) 16%, transparent); color: var(--warn); }
