@@ -377,5 +377,47 @@
   "license": "© Bangladesh Monitor",
   "licurl": "",
   "page": "https://bangladeshmonitor.com.bd/en/experience-winter-magic-under-starry-skies-at-chuti-resort"
+ },
+ "nilgiri": {
+  "title": "Nilgiri, Bandarban, Bangladesh.jpg",
+  "author": "Tanvir Rahat",
+  "license": "CC BY-SA 4.0",
+  "licurl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Nilgiri,_Bandarban,_Bangladesh.jpg"
+ },
+ "chimbuk": {
+  "title": "View from Chimbuk hill, Bandarban (2Q7A0721).jpg",
+  "author": "Moheen Reeyad",
+  "license": "CC BY-SA 4.0",
+  "licurl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:View_from_Chimbuk_hill,_Bandarban_(2Q7A0721).jpg"
+ },
+ "thanchi": {
+  "title": "Thanchi Bridge.jpg",
+  "author": "Nafis Ehtesham",
+  "license": "CC BY-SA 4.0",
+  "licurl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Thanchi_Bridge.jpg"
+ },
+ "remakri": {
+  "title": "Remakri Canal.jpg",
+  "author": "Masum-al-Hasan Rocky",
+  "license": "CC BY-SA 4.0",
+  "licurl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Remakri_Canal.jpg"
+ },
+ "alikadam": {
+  "title": "Alikadam (49074200576).jpg",
+  "author": "Tareq Uddin Ahmed",
+  "license": "CC BY 2.0",
+  "licurl": "https://creativecommons.org/licenses/by/2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Alikadam_(49074200576).jpg"
+ },
+ "dim-pahar": {
+  "title": "Thanchi from dim pahar.jpg",
+  "author": "Masum-al-Hasan Rocky",
+  "license": "CC BY-SA 4.0",
+  "licurl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Thanchi_from_dim_pahar.jpg"
  }
 }
